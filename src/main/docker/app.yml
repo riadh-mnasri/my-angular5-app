@@ -1,0 +1,14 @@
+version: '2'
+services:
+    myangularapp-app:
+        image: myangularapp
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://myangularapp-postgresql:5432/myAngularApp
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8091:8091
+    myangularapp-postgresql:
+        extends:
+            file: postgresql.yml
+            service: myangularapp-postgresql

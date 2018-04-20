@@ -1,0 +1,11 @@
+version: '2'
+services:
+    myangularapp-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/myAngularApp/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=myAngularApp
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
